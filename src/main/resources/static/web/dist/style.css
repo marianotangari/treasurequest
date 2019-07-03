@@ -132,30 +132,31 @@ margin-bottom: 10%;
 
 h2 {
   text-align: center;
-  font: 250 125px/1 'Berkshire Swash', Helvetica, sans-serif;
+  font: 250 125px/1 'Georgia';
+  font-weight: 900;
   color: black;
   text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
 }
 
 h3 {
   text-align: center;
-  font: 70 35px/1 'Berkshire Swash', Helvetica, sans-serif;
+  font: 70 35px/1 'Georgia';
   color: white;
   text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
 }
 
 h4{
-    font: 55 27px/1 'Berkshire Swash', Helvetica, sans-serif;
+    font: 55 27px/1 'Georgia';
     color: black;
     text-align: center;
     }
 
 h5{
-    font: 39 19px/1 'Berkshire Swash', Helvetica, sans-serif;
+    font: 39 19px/1 'Georgia';
     color: white;
     }
 h6{
-    font: 100 50px/1 'Berkshire Swash', Helvetica, sans-serif;
+    font: 100 50px/1 'Georgia';
         color: black;
         text-align: center;
     }
@@ -257,7 +258,8 @@ img{
 #login{
     background-image: url("soil2.jpg");
     background-size: cover;
-    font: 50 25px/1 'Berkshire Swash', Helvetica, sans-serif;
+    font: 50 25px/1 'Georgia';
+    font-weight: bolder;
     color: white;
     text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
     margin-top: 5%;
@@ -273,7 +275,8 @@ img{
 #logout{
     background-image: url("soil2.jpg");
     background-size: cover;
-    font: 50 25px/1 'Berkshire Swash', Helvetica, sans-serif;
+    font: 50 25px/1 'Georgia';
+    font-weight: bold;
     color: white;
     text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
     margin-top: 5%;
