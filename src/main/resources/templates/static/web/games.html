@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset= "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salvo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+    <title> Salvo! </title>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div id="title_main" class="row-lg-12">
+            <h2>Treasure Quest</h2>
+        </div>
+
+            <div id="login">
+                <div class="loginText" id="errorDiv"></div>
+                <div class="loginText">Username: <input type="text"
+                                                  id="usernameInput" size="12"> </div>
+                <div class="loginText">Password: <input type="password"
+                                                  id="passwordInput" size="12"></div>
+                <div class="loginText"><button id="loginButton">Log In</button></div>
+                <div class="loginText"><button id="signUpButton">Sign Up</button></div>
+
+            </div>
+
+            <div id="logout">
+                <div id="createGame"><button id="createGameButton">Create Game</button></div>
+                <div class="loginText"><button id="logoutButton">Log Out</button></div>
+            </div>
+
+        <div class="row" id="tablesDiv">
+            <div id="gamesDiv" class="col-lg-6">
+            <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <td colspan="3" class="tableTitle"><h3>Games</h3></td>
+                </tr>
+                <tr>
+                    <th>Game</th>
+                    <th>Creation Date</th>
+                    <th>Join!</th>
+                </tr>
+                </thead>
+                <tbody id="games"></tbody>
+            </table>
+            </div>
+
+            <div id="rankingDiv" class="col-lg-6">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <td colspan="5" class="tableTitle"><h3>Users</h3></td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <th>Score</th>
+                        <th>Win</th>
+                        <th>Tie</th>
+                        <th>Lose</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking"></tbody>
+            </table>
+            </div>
+    </div>
+    </div>
+
+    <script  src="dist/jquery-3.3.1.min.js"></script>
+    <script src="dist/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="games.js"></script>
+</body>
+</html>

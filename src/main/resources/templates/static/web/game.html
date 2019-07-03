@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset= "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/gridstack.css" />
+    <link rel="stylesheet" href="dist/gridstack-extra.css" />
+    <link rel="stylesheet" href="dist/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container-fluid" id="container">
+
+        <div class="row-12" id="logout">
+            <div class="loginText"><button id="logoutButton">Log Out</button></div>
+         </div>
+
+        <div id="title_main" class="row-lg-12">
+            <h2>Treasure Quest</h2>
+        </div>
+
+
+    <div id="prompt" class="row-12"></div>
+
+
+
+
+    <div id="grids" class="row">
+<!-- div solo para colocar el borde y posicionar en base a la altura y anchura-->
+        <div class="col-lg-6">
+
+            <div  id="grid-ships">
+                <!-- div que usa la librería gridstack grid-stack-10 se indica que son 10 columnas-->
+                <div id="grid" class="grid-stack grid-stack-10">
+                </div>
+            </div>
+                <div id="doneDiv">
+                    <button id="doneButton"><h5>Done Gems!</h5></button>
+                </div>
+
+        </div>
+
+
+<div class="col-lg-6">
+    <div  id="grid-ships_2">
+        <div id="infoPlaceShips2"></div>
+
+        <div id="grid2" class="grid-stack grid-stack-10"></div>
+    </div>
+    <div id="doneDiv2">
+        <button id="doneButton2"><h5>Done Salvoes!</h5></button>
+    </div>
+
+</div>
+        </div>
+
+    <div class="row">
+    <div class="col-6">
+    <table id="gameData1" class="table table-bordered">
+        <thead>
+        <tr>
+            <th><h5>My sunk ships</h5></th>
+            <th><h5>My Turn</h5></th>
+            <th><h5>Remaining shots</h5></th>
+        </tr>
+
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+    <div class="col-6">
+    <table id="gameData2" class="table table-bordered">
+        <thead>
+        <tr>
+            <th><h5>Enemy's sunk ships</h5></th>
+            <th><h5>Enemy's turn</h5></th>
+        </tr>
+
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+<!-- libreria y demás dependencias-->
+<script  src="dist/jquery-3.3.1.min.js"></script>
+<script src="dist/lodash.min.js"></script>
+<script src="dist/jquery-ui.min.js"></script>
+<script src="dist/gridstack.js"></script>
+<script src="dist/gridstack.jQueryUI.js"></script>
+<script src="dist/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
