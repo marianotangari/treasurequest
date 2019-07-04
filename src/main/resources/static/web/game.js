@@ -460,8 +460,9 @@ function getHitShips(){
 // Señala mis tesoros que fueron golpeados por el enemigo
 
 function getHitShipsEnemy(){
+    var enemy = games.game.GamePlayers.filter(x => x.gpid != game_player.gp);
     var cells_1=  Array.from(document.querySelectorAll("#grid-ships .grid-cell")).filter((x) => $(x).has("span").length == 0);
-     var  enemyGems = games.game.Salvoes.filter(x => x.player_id != currentPlayer[0].player_id).sort((a,b) => b.Turn - a.Turn);
+     var  enemyGems = games.game.Salvoes.filter(x => x.player_id == enemy[0].id).sort((a,b) => b.Turn - a.Turn);
      var hits = enemyGems.map(y => y.hits);
           for (var i = 0; i < hits.length; i ++){
                 for (var k = 0; k < hits[i].length; k++){
