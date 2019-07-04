@@ -373,6 +373,14 @@ table th{
     background-size : 80px;
     z-index:4;
     }
+.crack{
+    background-image: url("pico.png"), url("rocks2.jpg");
+    background-size : 35px, 80px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    z-index: 9999;
+    }
+
 
 .infoPlaceShips2{
     background-image: url('rocks2.jpg');

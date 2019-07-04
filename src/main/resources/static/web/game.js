@@ -74,6 +74,7 @@ function fetchData(){
             }).then(function(){
                 putEnemySalvoes();
                  getHitShips();
+                 getHitShipsEnemy();
 
                 }).catch(function(){
             container.innerHTML = "";
@@ -120,6 +121,7 @@ function fetchData2(){
                 putMySalvoes();
                 putEnemySalvoes();
                 getHitShips()
+                getHitShipsEnemy();
                 })
     }
 
@@ -454,6 +456,23 @@ function getHitShips(){
             }
         }
     }
+    }
+// Señala mis tesoros que fueron golpeados por el enemigo
+
+function getHitShipsEnemy(){
+    var cells_1=  Array.from(document.querySelectorAll("#grid-ships .grid-cell")).filter((x) => $(x).has("span").length == 0);
+     var  enemyGems = games.game.Salvoes.filter(x => x.player_id != currentPlayer[0].player_id).sort((a,b) => b.Turn - a.Turn);
+     var hits = enemyGems.map(y => y.hits);
+          for (var i = 0; i < hits.length; i ++){
+                for (var k = 0; k < hits[i].length; k++){
+                    for ( var j= 0; j< cells_1.length; j++){
+                        if (hits[i][k] == cells_1[j].id){
+                            $(cells_1[j]).addClass('crack')
+                            $(cells_1[j]).removeClass('hit')
+                        }
+                    }
+                }
+            }
     }
 
 // función que ubica las palas/salvos en la grilla del enemigo. Una pala/salvo por cada ship que el jugador posee.
