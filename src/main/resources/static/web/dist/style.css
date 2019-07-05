@@ -11,14 +11,29 @@ margin-right: 20%;}
 
 a:link{
    text-decoration: none;
-   color: black;
+   color: white;
  }
 
  a:visited{
      text-decoration: none;
-       color: black;
+       color: white;
  }
 
+button{
+    background-color:black;
+    border: solid white;
+     color: white;
+     }
+button:active{
+    background-color: red;}
+
+#backDiv{
+    font-size: 25px;
+    font-family: 'Georgia';
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
 .grid-stack-item-content {
     background-repeat: no-repeat;
     cursor: -webkit-grab;
@@ -123,12 +138,10 @@ margin-bottom: 10%;
 #doneButton2:active{
     height: 55px;
     width: 55px;
-    background-color: red;
     }
 #doneButton:active{
     height: 55px;
-    width: 55px;
-    background-color:red;}
+    width: 55px;}
 
 h2 {
   text-align: center;
@@ -255,6 +268,7 @@ img{
    border: 4px solid grey;
 }
 
+
 #login{
     background-image: url("soil2.jpg");
     background-size: cover;
@@ -290,6 +304,7 @@ img{
 
 .loginText{
     margin-top: 2%;
+    font-family: 'Georgia';
     }
 
 .pala{
@@ -355,8 +370,7 @@ table th{
     width: 490px;
     margin-left: 10%;
     margin-bottom: 5%;
-    border: 15px solid transparent;
-    border-image: url("rocks2.jpg") 50 round;
+    border: solid white;
     }
  #gameData2{
      background-image: url("soil2.jpg");
@@ -364,8 +378,7 @@ table th{
     width: 490px;
     margin-left: 10%;
     margin-bottom: 5%;
-    border: 15px solid transparent;
-    border-image: url("rocks2.jpg") 50 round;
+    border: solid white;
     }
 
 .hit{
@@ -401,7 +414,7 @@ table th{
     z-index: 9999;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
     }
 
 .gameOverAnimation{
@@ -409,7 +422,6 @@ table th{
     height: 200px;
     width: 200px;
     margin-left: 42%;
-    margin-top: 5%;
     background-image: url("treasure_chest_2.png");
     background-repeat : no-repeat;
      animation-name: grow;
@@ -420,3 +432,4 @@ table th{
     from{background-size: 80px;}
     to{background-size: 200px;}
     }
+

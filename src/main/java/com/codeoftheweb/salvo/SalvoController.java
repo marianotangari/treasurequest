@@ -312,7 +312,7 @@ public class SalvoController {
                                        response = new ResponseEntity<>("Place your ships before shooting!", HttpStatus.FORBIDDEN);
                                    else {
                                        if (salvo.getLocations().stream().count() > 5)
-                                           response = new ResponseEntity<>("Too many Salvoes", HttpStatus.FORBIDDEN);
+                                           response = new ResponseEntity<>("Too many shots!", HttpStatus.FORBIDDEN);
                                            else {
                                                        gamePlayer.addSalvo(salvo);
                                                        gamePlayerRepository.save(gamePlayer);

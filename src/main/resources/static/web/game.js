@@ -23,7 +23,7 @@ var gameOverInfoDiv = document.getElementById('gameOverInfoDiv');
 gameOverInfoDiv.style.display = "none";
 var gameOverAnimation = document.getElementById('gameOverAnimation');
 gameOverAnimation.style.display = 'none';
-
+var back = Array.from(document.getElementsByClassName('back'));
 //Primer fetch: crea la grilla y la tabla de información.
 
 function fetchData(){
@@ -99,7 +99,7 @@ function fetchData2(){
                 gameOverInfoDiv.style.display = "block";
                 gameOverAnimation.style.display = "block"
                 $(gameOverAnimation).addClass('gameOverAnimation');
-                gameOverInfoDiv.innerHTML = "<h2>You win!</h2><br><h6>Congratulations<br><br>" + currentPlayer[0].username +
+                gameOverInfoDiv.innerHTML = "<h2>You win!</h2><h6>Congratulations " + currentPlayer[0].username +
                 " !<br><br> You get 3 points!</h6>"
                 }
             if (games.game_state == 1){
@@ -400,6 +400,7 @@ doneButton.addEventListener("click", function(){
         $(infoPlaceShips).addClass('infoPlaceShips2');
         })
    });
+
 doneButton2.addEventListener('click', function(){
     getPlacedSalvoes();
        $.post({url: "/api/games/players/" + game_player.gp + "/salvoes",
@@ -415,7 +416,10 @@ doneButton2.addEventListener('click', function(){
         $(infoPlaceShips).addClass('infoPlaceShips2');
 
     })}
-    )
+    );
+back.map(x => x.addEventListener('click', function(){
+    window.location="games.html";
+    }));
 
 
 function blockGrid (element){

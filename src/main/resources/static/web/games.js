@@ -42,9 +42,9 @@ function createTable_Games(){
         cell_2.innerHTML = "<h5>"+ games.games[i].created + "</h5>";
         for (var j = 0; j < games.games[i].GamePlayers.length; j++){
             if (games.games[i].GamePlayers[j].id == games.player.Player_id)
-                cell_3.innerHTML = '<button><a href="/web/game.html?gp=' + games.games[i].GamePlayers[j].gpid + '" class="loginText"><h4>Go to Game</h4></a></button>'
+                cell_3.innerHTML = '<button><a href="/web/game.html?gp=' + games.games[i].GamePlayers[j].gpid + '" class="loginText">Go to Game</a></button>'
             else if (games.games[i].GamePlayers.length != 2)
-                cell_3.innerHTML = '<button id="' + games.games[i].id + '" onclick="joinGame(event)" class="loginText"><h4>Join Game</h4></button>';
+                cell_3.innerHTML = '<button id="' + games.games[i].id + '" onclick="joinGame(event)" class="loginText">Join Game</button>';
         }
     }
 }
@@ -145,7 +145,7 @@ createGameButton.addEventListener('click', function(){
 });
 
 function joinGame(e){
-    buttonId = e.target.parentNode.id;
+    buttonId = e.target.id;
     $.post("/api/game/" + parseInt(buttonId) + "/players")
     .done(function(response) {window.location = "game.html?gp=" + response.gpid})
     .catch(function() {alert("User not logged in")})
