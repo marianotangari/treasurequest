@@ -288,7 +288,7 @@ public class SalvoController {
                                                            response = new ResponseEntity<>("Too many shots", HttpStatus.FORBIDDEN);
                                                        else {
                                                            if (Math.abs(salvo.getTurn() - max_enemy.getTurn()) > 1)
-                                                               response = new ResponseEntity<>("Wait to your enemy's turn!", HttpStatus.FORBIDDEN);
+                                                               response = new ResponseEntity<>("Wait for your enemy's turn!", HttpStatus.FORBIDDEN);
                                                            else {
                                                                gamePlayer.addSalvo(salvo);
                                                                gamePlayerRepository.save(gamePlayer);
@@ -296,7 +296,7 @@ public class SalvoController {
                                                            }
                                                    }} else {
                                                        if (salvo.getTurn() > 1)
-                                                           response = new ResponseEntity<>("Wait to your enemy's turn!", HttpStatus.FORBIDDEN);
+                                                           response = new ResponseEntity<>("Wait for your enemy's turn!", HttpStatus.FORBIDDEN);
                                                        else {
                                                            gamePlayer.addSalvo(salvo);
                                                            gamePlayerRepository.save(gamePlayer);
