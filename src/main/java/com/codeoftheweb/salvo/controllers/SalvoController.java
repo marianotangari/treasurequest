@@ -1,5 +1,9 @@
-package com.codeoftheweb.salvo;
+package com.codeoftheweb.salvo.controllers;
 
+import com.codeoftheweb.salvo.models.*;
+import com.codeoftheweb.salvo.repositories.GamePlayerRepository;
+import com.codeoftheweb.salvo.repositories.GameRepository;
+import com.codeoftheweb.salvo.repositories.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,11 +12,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.cert.CollectionCertStoreParameters;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.lang.Math.*;
 
 
 @RestController
@@ -347,10 +350,18 @@ public class SalvoController {
                     if (optionalGamePlayer.get().getShips().stream().count() > 0) {
                         response = new ResponseEntity<>(HttpStatus.FORBIDDEN);
                     } else {
-                        GamePlayer gamePlayer = optionalGamePlayer.get();
-                        ships.stream().forEach(ship -> gamePlayer.addShip(ship));
-                        gamePlayerRepository.save(gamePlayer);
-                        response = new ResponseEntity<>(HttpStatus.CREATED);
+                        if (ships.size() > 5)
+                            response = new ResponseEntity<>("Too many ships", HttpStatus.FORBIDDEN);
+                        else {
+                            if (ships.stream().map(Ship::getLocation).collect(Collectors.toList()).stream().anyMatch(n-> n.size()>5))
+                                response = new ResponseEntity<>("Invalid gem size",HttpStatus.FORBIDDEN);
+                            else {
+                                GamePlayer gamePlayer = optionalGamePlayer.get();
+                                ships.stream().forEach(ship -> gamePlayer.addShip(ship));
+                                gamePlayerRepository.save(gamePlayer);
+                                response = new ResponseEntity<>(HttpStatus.CREATED);
+                            }
+                        }
                     }
                 }
             }
